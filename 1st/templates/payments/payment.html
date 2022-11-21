@@ -1,0 +1,38 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>payment</title>
+</head>
+<body>
+
+    {% if details %}
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>PAY ID</th>
+            <th>PAY METHOD</th>
+            <th>PAY AMMOUNT</th>
+        </tr>
+
+        {% for value in details %}
+        <tr>
+            <td>{{ value.id }}</td>
+            <td>{{ value.pay_id }}</td>
+            <td>{{ value.pay_method }}</td>
+            <td>{{ value.pay_ammount }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+    {% else %}
+    <p>No available entries</p>
+    {% endif %}
+    
+</body>
+</html>
